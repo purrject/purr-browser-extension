@@ -1,11 +1,40 @@
 language: node_js
-os:
-  - linux
-  - osx
+node_js: node
 addons:
-  chrome: stable
-  firefox: latest
-env:
-  matrix:
-    - BROWSER=chrome
-    - BROWSER=firefox
+matrix:
+  include:
+    - os: linux
+      addons:
+        chrome: stable
+      env:
+        - BROWSER=ChromeHeadless
+    - os: linux
+      addons:
+        firefox: latest
+      env:
+        - BROWSER=Firefox MOZ_HEADLESS=1
+    - os: osx
+      addons:
+        chrome: stable
+      env:
+        - BROWSER=ChromeHeadless
+    - os: osx
+      addons:
+        firefox: latest
+      env:
+        - BROWSER=Firefox MOZ_HEADLESS=1
+    - os: windows
+      before_install:
+        - choco install googlechrome
+      env:
+        - BROWSER=Chrome
+    - os: windows
+      before_install:
+        - choco install firefox
+      env:
+        - BROWSER=Firefox MOZ_HEADLESS=1
+    - os: windows
+      env:
+        - BROWSER=Edge
+  allow_failures:
+    - os: windows
