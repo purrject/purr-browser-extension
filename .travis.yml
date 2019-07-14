@@ -5,3 +5,7 @@ os:
 addons:
   chrome: stable
   firefox: latest
+env:
+  matrix:
+    - BROWSER=chrome
+    - BROWSER=firefox
