@@ -1,40 +1,47 @@
 language: node_js
 node_js: node
-addons:
 matrix:
   include:
     - os: linux
+      stage: Unit tests
       addons:
         chrome: stable
       env:
         - BROWSER=ChromeHeadless
     - os: linux
+      stage: Unit tests
       addons:
         firefox: latest
       env:
         - BROWSER=Firefox MOZ_HEADLESS=1
     - os: osx
+      stage: Unit tests
       addons:
         chrome: stable
       env:
         - BROWSER=ChromeHeadless
     - os: osx
+      stage: Unit tests
       addons:
         firefox: latest
       env:
         - BROWSER=Firefox MOZ_HEADLESS=1
     - os: windows
+      stage: Unit tests
       before_install:
         - choco install googlechrome
       env:
         - BROWSER=Chrome
     - os: windows
+      stage: Unit tests
       before_install:
         - choco install firefox
       env:
         - BROWSER=Firefox MOZ_HEADLESS=1
     - os: windows
+      stage: Unit tests
       env:
         - BROWSER=Edge
   allow_failures:
     - os: windows
+      stage: Unit tests
