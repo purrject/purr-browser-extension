@@ -1,40 +1,50 @@
 language: node_js
 node_js: node
-addons:
+stages:
+  - build
+  - deploy
 matrix:
   include:
     - os: linux
+      stage: build
       addons:
         chrome: stable
       env:
         - BROWSER=ChromeHeadless
     - os: linux
+      stage: build
       addons:
         firefox: latest
       env:
         - BROWSER=Firefox MOZ_HEADLESS=1
     - os: osx
+      stage: build
       addons:
         chrome: stable
       env:
         - BROWSER=ChromeHeadless
     - os: osx
+      stage: build
       addons:
         firefox: latest
       env:
         - BROWSER=Firefox MOZ_HEADLESS=1
     - os: windows
+      stage: build
       before_install:
         - choco install googlechrome
       env:
         - BROWSER=Chrome
     - os: windows
+      stage: build
       before_install:
         - choco install firefox
       env:
         - BROWSER=Firefox MOZ_HEADLESS=1
     - os: windows
+      stage: build
       env:
         - BROWSER=Edge
   allow_failures:
     - os: windows
+      stage: build
