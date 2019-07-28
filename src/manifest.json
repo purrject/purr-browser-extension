@@ -12,11 +12,13 @@
     }
   },
 
-  "icons": "img/icon.png",
+  "icons": {
+    "48": "icon.png"
+  },
 
   "page_action": {
     "default_title": "Purr",
-    "default_icon": "img/icon.png"
+    "default_icon": "icon.png"
   },
 
   "permissions": [
