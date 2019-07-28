@@ -1,5 +1,8 @@
 language: node_js
 node_js: node
+stages:
+  - Unit tests
+  - Build and deploy
 matrix:
   include:
     - os: linux
@@ -42,6 +45,14 @@ matrix:
       stage: Unit tests
       env:
         - BROWSER=Edge
+    - stage: Build and deploy
+      script: yarn build
+      deploy:
+        provider: script
+        script: yarn deploy:chrome
+        on:
+          branch: master
+          tags: true
   allow_failures:
     - os: windows
       stage: Unit tests

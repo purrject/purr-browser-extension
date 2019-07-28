@@ -6,6 +6,7 @@
     "test": "gulp test",
     "build": "gulp build",
     "clean": "gulp clean",
+    "deploy:chrome": "webstore upload --source=dist --auto-publish",
     "gulp": "gulp"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "homepage": "https://github.com/purrject/purr-browser-extension#readme",
   "devDependencies": {
     "chai": "^4.2.0",
+    "chrome-webstore-upload-cli": "^1.2.0",
     "del": "^5.0.0",
     "eslint": "^6.0.1",
     "gulp": "^4.0.2",
