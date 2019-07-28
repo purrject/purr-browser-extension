@@ -63,3 +63,6 @@ typings/
 # lockfiles
 package-lock.json
 yarn.lock
+
+# Built package
+dist

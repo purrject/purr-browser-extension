@@ -1,7 +1,8 @@
 'use strict';
 
-const { src, task } = require('gulp');
+const { src, dest, task } = require('gulp');
 
+const del = require('del');
 const eslint = require('gulp-eslint');
 const karma = require('karma');
 
@@ -15,3 +16,8 @@ task('test', (done) => new karma.Server({
   singleRun: true,
   browsers: [process.env.BROWSER || 'Firefox']
 }, done).start());
+
+task('build', () => src(['src/*.js', 'src/manifest.json', 'src/icon.png'])
+  .pipe(dest('dist')));
+
+task('clean', () => del('dist'));
