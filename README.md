@@ -12,7 +12,7 @@ The extension is not designed for standalone usage, rather to be called from the
 
 ## Development
 
-After checking out the repo, run `npm install` or `yarn install` in the `extension` subdirectory to install dependencies. You can also run `npm test` to run all the tests. There are other development-related commands available in the form of gulp tasks, type `npm gulp` to list all of them.
+After checking out the repo, run `npm install` or `yarn install` to install dependencies. You can also run `npm test` to run all the tests. There are other development-related commands available in the form of gulp tasks, type `npm gulp` to list all of them.
 
 ## Contributing
 
