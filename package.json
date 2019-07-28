@@ -7,6 +7,7 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "deploy:chrome": "webstore upload --source=dist --auto-publish",
+    "deploy:firefox": "web-ext-submit --source-dir=dist",
     "gulp": "gulp"
   },
   "repository": {
@@ -34,6 +35,7 @@
     "karma-mocha": "^1.3.0",
     "karma-sinon": "^1.0.5",
     "mocha": "^6.1.4",
-    "sinon": "^7.3.2"
+    "sinon": "^7.3.2",
+    "web-ext-submit": "^3.1.1"
   }
 }

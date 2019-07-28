@@ -47,9 +47,21 @@ matrix:
         - BROWSER=Edge
     - stage: Build and deploy
       script: yarn build
+      env:
+        - BROWSER=chrome
       deploy:
         provider: script
-        script: yarn deploy:chrome
+        script: yarn yarn deploy:${BROWSER}
+        on:
+          branch: master
+          tags: true
+    - stage: Build and deploy
+      script: yarn build
+      env:
+        - BROWSER=firefox
+      deploy:
+        provider: script
+        script: yarn deploy:${BROWSER}
         on:
           branch: master
           tags: true
